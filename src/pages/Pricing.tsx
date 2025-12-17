@@ -92,7 +92,7 @@ export default function Pricing() {
                 </div>
                 <h2 className="mb-2">Premium Plan</h2>
                 <div className="mb-4">
-                  <span className="text-5xl">$9.99</span>
+                  <span className="text-5xl">RS 69</span>
                   <span className="text-blue-100">/month</span>
                 </div>
                 <p className="text-blue-100">
@@ -131,7 +131,7 @@ export default function Pricing() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-sm border-2 border-blue-200">
               <h3 className="text-gray-900 mb-2">Monthly Subscription</h3>
-              <p className="text-3xl text-blue-600 mb-2">$9.99/month</p>
+              <p className="text-3xl text-blue-600 mb-2">Rs 69/month</p>
               <p className="text-gray-600 mb-4">
                 Billed monthly. Cancel anytime, no questions asked.
               </p>
@@ -152,7 +152,7 @@ export default function Pricing() {
                 Save 40%
               </div>
               <h3 className="text-gray-900 mb-2">Annual Subscription</h3>
-              <p className="text-3xl text-purple-600 mb-2">$59.99/year</p>
+              <p className="text-3xl text-purple-600 mb-2">Rs 499/year</p>
               <p className="text-gray-600 mb-4">
                 Just $5/month when billed annually. Best value!
               </p>
