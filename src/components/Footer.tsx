@@ -88,16 +88,20 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="https://play.google.com/store" 
-                  target="_blank" 
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm hover:text-blue-400 transition-colors flex items-center gap-1"
+                  className="inline-block hover:opacity-80 transition-opacity"
                 >
-                  Get on Google Play
-                  <ExternalLink className="w-3 h-3" />
+                  <img
+                    src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                    alt="Get it on Google Play"
+                    className="h-10 w-auto"
+                  />
                 </a>
               </li>
+
             </ul>
           </div>
         </div>

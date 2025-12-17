@@ -11,35 +11,41 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
 
-  emailjs
-    .send(
-      "service_yad9aan",     // e.g. service_x8abcd
-      "template_bft67u5",    // e.g. template_123xyz
-      {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      },
-      "8QaR5l0-0HCx0MB56"      // e.g. pu keylick
-    )
-    .then(() => {
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (isSending) return; // ⛔ prevent duplicate send
+    setIsSending(true);
+
+    emailjs
+      .send(
+        "service_yad9aan",     // e.g. service_x8abcd
+        "template_bft67u5",    // e.g. template_123xyz
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "8QaR5l0-0HCx0MB56"      // e.g. pu keylick
+      )
+      .then(() => {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Something went wrong. Please try again.");
       });
-    })
-    .catch((error) => {
-      console.error("EmailJS Error:", error);
-      alert("Something went wrong. Please try again.");
-    });
-};
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -234,11 +240,12 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                disabled={isSending}
+                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg disabled:opacity-50"
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
+
 
               <p className="text-sm text-gray-500 text-center">
                 * Required fields. We'll respond within 24-48 hours.
