@@ -93,13 +93,13 @@ export default function Home() {
                 to="/features"
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
               >
-                Create PDF
+                Play With PDF
               </Link>
               <Link
                 to="/features"
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors border-2 border-blue-600"
               >
-                Merge PDF
+                Download App
               </Link>
               <Link
                 to="/pricing"
@@ -200,14 +200,14 @@ export default function Home() {
               <div className="text-center mb-6">
                 <h3 className="mb-2">Premium Plan</h3>
                 <div className="mb-4">
-                  <span className="text-4xl">$9.99</span>
+                  <span className="text-4xl">Rs 69</span>
                   <span className="text-blue-100">/month</span>
                 </div>
               </div>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
-                  <span>Everything in Free</span>
+                  <span>No Ads</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-yellow-300 mt-0.5 flex-shrink-0" />
@@ -227,7 +227,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
-                  <span>Priority support</span>
+                  <span>Professional resume builder Tool</span>
                 </li>
               </ul>
               <Link
