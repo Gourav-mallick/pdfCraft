@@ -1,5 +1,5 @@
 {
-      "name":"Responsive PDF Maker Website",
+      "name": "Responsive PDF Maker Website",
       "homepage": "https://gourav-mallick.github.io/pdfCraft/",
       "version": "0.1.0",
       "private": true,
@@ -33,6 +33,7 @@
             "class-variance-authority": "^0.7.1",
             "clsx": "*",
             "cmdk": "^1.1.1",
+            "emailjs-com": "^3.2.0",
             "embla-carousel-react": "^8.6.0",
             "gh-pages": "^6.3.0",
             "input-otp": "^1.4.2",
@@ -58,8 +59,8 @@
       },
       "scripts": {
             "dev": "vite",
-            "predeploy":"npm run build",
-           "deploy": "gh-pages -d build",
+            "predeploy": "npm run build",
+            "deploy": "gh-pages -d build",
             "build": "vite build"
       }
 }

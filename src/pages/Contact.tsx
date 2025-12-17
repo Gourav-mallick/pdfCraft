@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MessageSquare, Send, HelpCircle, Clock, CheckCircle } from 'lucide-react';
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,15 +11,35 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real application, this would send the form data to a server
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 5000);
-  };
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  emailjs
+    .send(
+      "service_yad9aan",     // e.g. service_x8abcd
+      "template_bft67u5",    // e.g. template_123xyz
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      "8QaR5l0-0HCx0MB56"      // e.g. pu keylick
+    )
+    .then(() => {
+      setSubmitted(true);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      alert("Something went wrong. Please try again.");
+    });
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -94,7 +115,7 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-gray-900 mb-2">Email Support</h3>
-              <p className="text-gray-600 mb-2">support@pdfcraft.com</p>
+              <p className="text-gray-600 mb-2">mallickg918@gmail.com</p>
               <p className="text-sm text-gray-500">We respond within 24-48 hours</p>
             </div>
 
@@ -262,7 +283,7 @@ export default function Contact() {
             Our support team is always ready to assist you with any questions or concerns
           </p>
           <a
-            href="mailto:support@pdfcraft.com"
+            href="mailto:mallickg918@gmail.com"
             className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors"
           >
             <Mail className="w-5 h-5" />
